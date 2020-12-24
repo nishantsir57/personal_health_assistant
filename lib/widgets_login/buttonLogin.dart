@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/ForgetPassword.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
 import 'package:personal_health_assistant/activities/home.dart';
-import 'package:personal_health_assistant/activities/newuser_page.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
 
 class LoginButtonWidget extends StatelessWidget {
 @override

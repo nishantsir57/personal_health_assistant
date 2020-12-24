@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/NewPasswordPage.dart';
-import 'package:personal_health_assistant/activities/loginpage.dart';
-import 'package:personal_health_assistant/widgets_login/buttonLogin.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/widgets_login/newEmail.dart';
 
 class ForgetPage extends StatelessWidget{

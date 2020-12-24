@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/ForgetPassword.dart';
-import 'package:personal_health_assistant/activities/NewPasswordPage.dart';
-import 'package:personal_health_assistant/activities/loginpage.dart';
-import 'package:personal_health_assistant/activities/newuser_page.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
 
 void main() {
   runApp(MyApp());

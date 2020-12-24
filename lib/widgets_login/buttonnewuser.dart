@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/home.dart';
-import 'package:personal_health_assistant/activities/loginpage.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 
 
 class ButtonNewUserWidget extends StatelessWidget {
