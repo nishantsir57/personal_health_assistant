@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
-import 'package:personal_health_assistant/activities/home.dart';
+import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
 
 class LoginButtonWidget extends StatelessWidget {
@@ -42,7 +42,7 @@ class LoginButtonState extends State<LoginButton>{
                   ) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => NewUser())
+                    MaterialPageRoute(builder: (context) => Home())
                   );
               },
               child: Row(

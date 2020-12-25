@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
@@ -57,6 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return ForgetPage();
+    return Home();
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/home.dart';
+import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 
 
@@ -41,7 +41,7 @@ class ButtonNewUserState extends State<ButtonNewUser> {
               onPressed: (){
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home())
+                    MaterialPageRoute(builder: (context) => LoginPage())
                 );
               },
               child: Row(
