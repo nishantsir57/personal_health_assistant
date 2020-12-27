@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
-import 'package:personal_health_assistant/activities/personalDetails.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/HeightDetails.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 
 
 class Home extends StatelessWidget{
@@ -96,11 +97,11 @@ class HomeWidgetState extends State<HomeWidget> {
               if (value == healthPlans) {
                 Navigator.push(context,
                     MaterialPageRoute(
-                        builder: (context) => PersonalDetails()));
+                        builder: (context) => WeightDetail()));
               } else if (value == dietPlans) {
                 Navigator.push(context,
                     MaterialPageRoute(
-                        builder: (context) => PersonalDetails()));
+                        builder: (context) => WeightDetail()));
               }
               else if (value == consultWithDoctor) {
                 Navigator.push(context,

@@ -4,6 +4,9 @@ import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassw
 import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/HeightDetails.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/TargetDetail.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,6 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return WeightDetail();
   }
 }
