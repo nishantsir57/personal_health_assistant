@@ -4,6 +4,7 @@ import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassw
 import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/TargetDetail.dart';
+import 'package:personal_health_assistant/widgets/personalDetailsText.dart';
 import 'package:personal_health_assistant/widgets_login/newEmail.dart';
 
 class AgeDetail extends StatelessWidget{
@@ -73,23 +74,7 @@ class AgeDetailWidgetState extends State<AgeDetailWidget> {
 
       child: Column(
         children: [
-          Container(
-            alignment: Alignment.center,
-            margin: new EdgeInsets.only(top: 75,bottom: 25,left: 20,right: 20),
-            child: Padding(
-              padding: new EdgeInsets.all(10.0),
-              child: Text(
-                "How Old are you?",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  letterSpacing: 2.0,
-                  wordSpacing: 3.0,
-                ),
-              ),
-            ),
-          ),
+          personalDetailText(ageText),
           Container(
             width: MediaQuery.of(context).size.width/4,
             child: Padding(

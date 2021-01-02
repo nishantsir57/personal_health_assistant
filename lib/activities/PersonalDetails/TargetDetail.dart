@@ -3,6 +3,7 @@ import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
+import 'package:personal_health_assistant/widgets/personalDetailsText.dart';
 import 'package:personal_health_assistant/widgets_login/newEmail.dart';
 
 class TargetDetail extends StatelessWidget{
@@ -72,23 +73,7 @@ class TargetDetailWidgetState extends State<TargetDetailWidget> {
 
       child: Column(
         children: [
-          Container(
-            alignment: Alignment.center,
-            margin: new EdgeInsets.only(top: 75,bottom: 25,left: 20,right: 20),
-            child: Padding(
-              padding: new EdgeInsets.all(10.0),
-              child: Text(
-                targetText,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  letterSpacing: 2.0,
-                  wordSpacing: 3.0,
-                ),
-              ),
-            ),
-          ),
+          personalDetailText(targetText),
 
           Container(
             width: MediaQuery.of(context).size.width/4,

@@ -3,6 +3,7 @@ import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassw
 import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/HeightDetails.dart';
+import 'package:personal_health_assistant/widgets/personalDetailsText.dart';
 import 'package:personal_health_assistant/widgets_login/newEmail.dart';
 
 class WeightDetail extends StatelessWidget{
@@ -51,7 +52,6 @@ class WeightDetailWidgetState extends State<WeightDetailWidget> {
                 child: ListView(
                   children: <Widget>[
                     textForDetails(weighttext),
-
                   ],
                 ),
               )
@@ -74,23 +74,7 @@ class WeightDetailWidgetState extends State<WeightDetailWidget> {
 
       child: Column(
         children: [
-          Container(
-            alignment: Alignment.center,
-            margin: new EdgeInsets.only(top: 75,bottom: 40,left: 20,right: 20),
-            child: Padding(
-              padding: new EdgeInsets.all(10.0),
-              child: Text(
-                "Enter Your Weight",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 30.0,
-                  letterSpacing: 2.0,
-                  wordSpacing: 3.0,
-                ),
-              ),
-            ),
-          ),
+          personalDetailText(weighttext),
           Container(
             width: MediaQuery.of(context).size.width/4,
             child: Padding(
