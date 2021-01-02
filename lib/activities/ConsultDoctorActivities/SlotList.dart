@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/ConsultDoctorActivities/SlotAvailabilityPage.dart';
+
+import 'SlotAvailabilityPage.dart';
 class SlotList extends StatefulWidget {
   SlotList() : super();
   @override

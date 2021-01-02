@@ -56,7 +56,7 @@ class DoctorListState extends State<DoctorListWidget> {
   Widget doctorDetailCard(String doc_name,String doc_experiance,String doc_ImageURL, String Area_of_expertise){
     return Container(
       // color: Colors.white,
-      height: MediaQuery.of(context).size.height/3.4,
+      height: MediaQuery.of(context).size.height/3.2,
       child: Card(
         shape: RoundedRectangleBorder(
           side: new BorderSide(

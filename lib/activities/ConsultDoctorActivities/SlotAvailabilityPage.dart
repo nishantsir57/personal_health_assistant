@@ -113,6 +113,7 @@ class SlotPageWidgetState extends State<SlotPageWidget> {
             child: FlatButton(
               onPressed: () {
                 if (SlotListState.selectedUser != null) {
+                  // slotBooked=SlotListState.selectedUser.toString();
                   Navigator.push(
                       context,
                       MaterialPageRoute(
