@@ -159,6 +159,4 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
           ),
         ]));
   }
-
-
 }
