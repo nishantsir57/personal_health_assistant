@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/TargetDetail.dart';
 import 'package:personal_health_assistant/widgets/personalDetailsText.dart';
-import 'package:personal_health_assistant/widgets_login/newEmail.dart';
+import 'package:personal_health_assistant/Constants.dart';
 
 class AgeDetail extends StatelessWidget{
   @override
@@ -21,7 +17,6 @@ class AgeDetailWidget extends StatefulWidget{
 
 class AgeDetailWidgetState extends State<AgeDetailWidget> {
   static String ageText="Enter Your Age";
-  static String ageValue;
 
 
 
@@ -96,7 +91,7 @@ class AgeDetailWidgetState extends State<AgeDetailWidget> {
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
-                    onChanged: (value) => ageValue=value,
+                    onChanged: (value) => Constants.age=value,
                     style: TextStyle(
                       color: Colors.white,
                     ),

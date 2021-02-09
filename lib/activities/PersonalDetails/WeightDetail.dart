@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/HeightDetails.dart';
 import 'package:personal_health_assistant/widgets/personalDetailsText.dart';
-import 'package:personal_health_assistant/widgets_login/newEmail.dart';
+import 'package:personal_health_assistant/Constants.dart';
 
 class WeightDetail extends StatelessWidget{
   @override
@@ -20,9 +17,6 @@ class WeightDetailWidget extends StatefulWidget{
 
 class WeightDetailWidgetState extends State<WeightDetailWidget> {
   static String weighttext="Enter Your Weight";
-  static String weightValue;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +90,7 @@ class WeightDetailWidgetState extends State<WeightDetailWidget> {
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
-                    onChanged: (value) => weightValue=value,
+                    onChanged: (value) => Constants.weight=value,
                     style: TextStyle(
                       color: Colors.white,
                     ),

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/AgeDetail.dart';
 import 'package:personal_health_assistant/widgets/personalDetailsText.dart';
-import 'package:personal_health_assistant/widgets_login/newEmail.dart';
+import 'package:personal_health_assistant/Constants.dart';
 
 class HeightDetail extends StatelessWidget{
   @override
@@ -20,7 +17,6 @@ class HeightDetailWidget extends StatefulWidget{
 
 class HeightDetailWidgetState extends State<HeightDetailWidget> {
   static String heighttext="Enter Your Height";
-  static String heightValue;
 
 
 
@@ -94,7 +90,7 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
-                    onChanged: (value) => heightValue=value,
+                    onChanged: (value) => Constants.heightFeet=value,
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -126,7 +122,7 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
-                    onChanged: (value) => heightValue=value,
+                    onChanged: (value) => Constants.heightInches=value,
                     style: TextStyle(
                       color: Colors.white,
                     ),

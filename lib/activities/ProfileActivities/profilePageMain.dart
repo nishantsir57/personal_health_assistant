@@ -1,12 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/PersonalDetails/AgeDetail.dart';
-import 'package:personal_health_assistant/activities/PersonalDetails/HeightDetails.dart';
-import 'package:personal_health_assistant/activities/PersonalDetails/TargetDetail.dart';
-import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/ActiveAppointments.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/ActivePlans.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/LogoutButton.dart';
+import 'package:personal_health_assistant/Constants.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -53,10 +50,10 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
                   dataOfPerson("Name: from newName widget"),
                   dataOfPerson("Email: from NewEmail widget"),
                   dataOfPerson("Phone: from inputPhone Widget"),
-                  dataOfPerson(AgeDetailWidgetState.ageText),
-                  dataOfPerson(WeightDetailWidgetState.weighttext),
-                  dataOfPerson(TargetDetailWidgetState.targetText),
-                  dataOfPerson(HeightDetailWidgetState.heighttext),
+                  dataOfPerson(Constants.age),
+                  dataOfPerson(Constants.weight),
+                  dataOfPerson(Constants.targetWeight),
+                  dataOfPerson('${Constants.heightFeet} feets ${Constants.heightInches} inches'),
                   plansButton(activePlanText),
                   plansButton(doctorAppointText),
                 ]),

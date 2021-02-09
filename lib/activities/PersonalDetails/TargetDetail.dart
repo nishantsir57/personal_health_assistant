@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/NewPasswordPage.dart';
-import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 import 'package:personal_health_assistant/widgets/personalDetailsText.dart';
-import 'package:personal_health_assistant/widgets_login/newEmail.dart';
+import 'package:personal_health_assistant/Constants.dart';
+import 'package:personal_health_assistant/development/profile.dart';
 
 class TargetDetail extends StatelessWidget{
   @override
@@ -20,7 +18,6 @@ class TargetDetailWidget extends StatefulWidget{
 
 class TargetDetailWidgetState extends State<TargetDetailWidget> {
   static String targetText="Enter Target Weight";
-  static String targetValue;
 
 
 
@@ -96,7 +93,7 @@ class TargetDetailWidgetState extends State<TargetDetailWidget> {
                   height: 50,
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
-                    onChanged: (value) => targetValue=value,
+                    onChanged: (value) => Constants.targetWeight=value,
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -138,7 +135,8 @@ class TargetDetailWidgetState extends State<TargetDetailWidget> {
                   textColor: Colors.white70,
                   color: Colors.black87,
                   child: Text("Next"),
-                  onPressed: () {
+                  onPressed: () async{
+                    await Profile().createProfile();
                     Navigator.push(context, MaterialPageRoute(
                         builder: (context)=>Home()
                     ));
