@@ -12,9 +12,10 @@ import 'package:personal_health_assistant/activities/LoginActivities/newuser_pag
 import 'package:personal_health_assistant/activities/PersonalDetails/HeightDetails.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/TargetDetail.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
-import 'package:personal_health_assistant/activities/ProfileActivities/ActiveAppointments.dart';
+import 'package:personal_health_assistant/activities/ProfileActivities/ActivePlans.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
-import 'package:personal_health_assistant/widgets/exercisePlanChart.dart';
+import 'package:personal_health_assistant/activities/ExercisePlanActivities/dietPlanChart.dart';
+import 'package:personal_health_assistant/activities/ExercisePlanActivities/exercisePlanChart.dart';
 
 void main() {
   // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);

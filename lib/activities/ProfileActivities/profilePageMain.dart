@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/ProfileActivities/ActiveAppointments.dart';
+import 'package:personal_health_assistant/activities/ExercisePlanActivities/currentDoctorApp.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/ActivePlans.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/LogoutButton.dart';
 import 'package:personal_health_assistant/Constants.dart';
+import 'package:personal_health_assistant/activities/ExercisePlanActivities/dietPlanChart.dart';
+import 'package:personal_health_assistant/activities/ExercisePlanActivities/exercisePlanChart.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -46,14 +48,14 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
             children: [
               Expanded(
                 child: ListView(children: <Widget>[
-                  profilePicture(profilePicutrePath),
+                  // profilePicture(profilePicutrePath),
                   dataOfPerson("Name: from newName widget"),
                   dataOfPerson("Email: from NewEmail widget"),
                   dataOfPerson("Phone: from inputPhone Widget"),
-                  dataOfPerson(Constants.age),
-                  dataOfPerson(Constants.weight),
-                  dataOfPerson(Constants.targetWeight),
-                  dataOfPerson('${Constants.heightFeet} feets ${Constants.heightInches} inches'),
+                  dataOfPerson("Constants.age"),
+                  dataOfPerson("Constants.weight"),
+                  dataOfPerson("Constants.targetWeight"),
+                  dataOfPerson("{Constants.heightFeet} feets {Constants.heightInches} inches"),
                   plansButton(activePlanText),
                   plansButton(doctorAppointText),
                 ]),
@@ -89,11 +91,11 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
               if(textplan==activePlanText){
                 Navigator.push(context,
                     MaterialPageRoute(
-                        builder: (context) => ActivePlans()));
+                        builder: (context) => DietPlanChart()));
               }else if(textplan==doctorAppointText){
                 Navigator.push(context,
                     MaterialPageRoute(
-                        builder: (context) => DoctorAppointment()));
+                        builder: (context) => CurrentAppointment()));
               }
             },
             child: Center(
