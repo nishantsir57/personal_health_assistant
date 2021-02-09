@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
+import 'package:personal_health_assistant/development/signup.dart';
 
 
 class ButtonNewUserWidget extends StatelessWidget {
@@ -38,11 +39,27 @@ class ButtonNewUserState extends State<ButtonNewUser> {
               borderRadius: BorderRadius.circular(30.0),
             ),
             child: FlatButton(
-              onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage())
-                );
+              onPressed: () async{
+               String status =await Signup().signup();
+               if(status == 'success') {
+                 await Signup().createUser();
+                 Navigator.push(
+                     context,
+                     MaterialPageRoute(builder: (context) => Home())
+                 );
+               }
+               else
+                 {
+                   showDialog(
+                     context: context,
+                     builder: (BuildContext context) {
+                       return new AlertDialog(
+                         title: new Text(status),
+                         // content: new Text(status),
+                       );
+                     },
+                   );
+                 }
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

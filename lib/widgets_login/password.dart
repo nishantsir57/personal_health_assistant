@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_health_assistant/Constants.dart';
 
 class PasswordInputWidget extends StatelessWidget {
   @override
@@ -14,7 +15,6 @@ class PasswordInput extends StatefulWidget {
 }
 
 class PasswordInputState extends State<PasswordInput> {
-  static String password;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +24,7 @@ class PasswordInputState extends State<PasswordInput> {
         height: 50,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          onChanged: (value) => password=value,
+          onChanged: (value) => Constants.password=value,
           style: TextStyle(
             color: Colors.white,
           ),

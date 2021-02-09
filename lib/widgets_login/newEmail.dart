@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:personal_health_assistant/Constants.dart';
 class NewEmailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,6 @@ class NewEmail extends StatefulWidget {
 }
 
 class NewEmailState extends State<NewEmail> {
-  static String email;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +23,7 @@ class NewEmailState extends State<NewEmail> {
         height: 50,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          onChanged: (value) => email=value,
+          onChanged: (value) => Constants.email=value,
           style: TextStyle(
             color: Colors.white,
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_health_assistant/Constants.dart';
 
 class NewNameWidget extends StatelessWidget {
   @override
@@ -15,7 +16,6 @@ class NewName extends StatefulWidget {
 
 class NewNameState extends State<NewName> {
   @override
-  static String name;
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 50, right: 50),
@@ -25,7 +25,7 @@ class NewNameState extends State<NewName> {
         height: 50,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          onChanged: (value) => name=value,
+          onChanged: (value) => Constants.name=value,
           style: TextStyle(
             color: Colors.white,
           ),

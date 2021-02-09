@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_health_assistant/Constants.dart';
 class InputPhoneWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,6 @@ class InputPhone extends StatefulWidget {
 }
 
 class InputPhoneState extends State<InputPhone> {
-  static String phone;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +23,7 @@ class InputPhoneState extends State<InputPhone> {
         height: 50,
         width: MediaQuery.of(context).size.width,
         child: TextField(
-          onChanged: (value) => phone=value,
+          onChanged: (value) => Constants.phone=value,
           style: TextStyle(
             color: Colors.white,
           ),

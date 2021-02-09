@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
+import 'package:personal_health_assistant/development/login.dart';
 
 class LoginButtonWidget extends StatelessWidget {
 @override
@@ -38,12 +39,26 @@ class LoginButtonState extends State<LoginButton>{
               borderRadius: BorderRadius.circular(30.0),
             ),
             child: FlatButton(
-              onPressed: (
-                  ) {
+              onPressed: () async{
+                String status=await Login().login();
+                if(status == 'success') {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Home())
+                      context,
+                      MaterialPageRoute(builder: (context) => Home())
                   );
+                }
+                else
+                  {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return new AlertDialog(
+                          title: new Text(status),
+                          // content: new Text(status),
+                        );
+                      },
+                    );
+                  }
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

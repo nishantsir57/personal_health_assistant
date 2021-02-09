@@ -4,6 +4,8 @@ import 'package:personal_health_assistant/activities/LoginActivities/loginpage.d
 import 'package:personal_health_assistant/widgets_login/newEmail.dart';
 import 'package:personal_health_assistant/widgets_login/password.dart';
 
+import '../../Constants.dart';
+
 class NewPasswordPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -64,7 +66,7 @@ class NewPasswordPageWidgetState extends State<NewPasswordPageWidget>{
                         height: 50,
                         width: MediaQuery.of(context).size.width,
                         child: TextField(
-                          onChanged: (value) => PasswordInputState.password=value,
+                          onChanged: (value) => Constants.confirmPassword=value,
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -96,7 +98,7 @@ class NewPasswordPageWidgetState extends State<NewPasswordPageWidget>{
                       height: 50,
                       width: MediaQuery.of(context).size.width,
                       child: TextField(
-                        onChanged: (value) => PasswordInputState.password=value,
+                        onChanged: (value) => Constants.password=value,
                         style: TextStyle(
                           color: Colors.white,
                         ),
