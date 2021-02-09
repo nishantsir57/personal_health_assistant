@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "593628955981",
+    "project_id": "personal-health-assistan-38627",
+    "storage_bucket": "personal-health-assistan-38627.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593628955981:android:f0f799afdd0d5d68ee2304",
+        "android_client_info": {
+          "package_name": "com.health.personal_health_assistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593628955981-p82jq4t1s1a9lur04196ga9p5dlbmmpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.health.personal_health_assistant",
+            "certificate_hash": "176de6ab6096706d2861ccb22641ebb88112b570"
+          }
+        },
+        {
+          "client_id": "593628955981-n0kh9t7rj66o1gv8ev633dtub8c97cip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7UHu3V1bxvUb78AHSuw-bm25CB1M0XHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593628955981-n0kh9t7rj66o1gv8ev633dtub8c97cip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
