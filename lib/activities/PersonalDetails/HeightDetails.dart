@@ -55,13 +55,16 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
     );
   }
 
-  Widget textForDetails(String text){
+  Widget textForDetails(String text) {
     return Container(
-      height: MediaQuery.of(context).size.height,
+      height: MediaQuery
+          .of(context)
+          .size
+          .height,
       decoration: BoxDecoration(
         color: Colors.black54,
         border: Border.all(
-          color: Colors.white12,
+          color: Colors.white10,
           width: 10,
         ),
         // borderRadius: BorderRadius.circular(12),
@@ -71,26 +74,34 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
         children: [
           personalDetailText(heighttext),
           Container(
-            width: MediaQuery.of(context).size.width/3,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width / 4,
             child: Padding(
               padding: const EdgeInsets.all(1.0),
-              child: Image.network("https://cdn3.iconfinder.com/data/icons/healthcare-and-medicine-12/64/Height-512.png",
+              child: Image.network(
+                "https://cdn3.iconfinder.com/data/icons/healthcare-and-medicine-12/64/Height-512.png",
                 fit: BoxFit.fitWidth,
                 // alignment: Alignment.centerLeft,
               ),
             ),
           ),
+
           Container(
             // width: 200,
-              margin: const EdgeInsets.only(top: 30,bottom: 20),
+              margin: const EdgeInsets.only(top: 30, bottom: 20),
               child: Padding(
                 padding: const EdgeInsets.only(left: 50, right: 50),
                 child: Container(
                   color: Colors.white10,
                   height: 50,
-                  width: MediaQuery.of(context).size.width,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
                   child: TextField(
-                    onChanged: (value) => Constants.heightFeet=value,
+                    onChanged: (value) => Constants.weight = value,
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -102,7 +113,7 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
                           )
                       ),
                       fillColor: Colors.lightBlueAccent,
-                      labelText: 'in feets',
+                      labelText: 'in Feet',
                       labelStyle: TextStyle(
                         color: Colors.black,
                       ),
@@ -111,18 +122,20 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
                 ),
               )
           ),
-
           Container(
             // width: 200,
-              margin: const EdgeInsets.only(top: 10,bottom: 40),
+              margin: const EdgeInsets.all(1),
               child: Padding(
                 padding: const EdgeInsets.only(left: 50, right: 50),
                 child: Container(
                   color: Colors.white10,
                   height: 50,
-                  width: MediaQuery.of(context).size.width,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
                   child: TextField(
-                    onChanged: (value) => Constants.heightInches=value,
+                    onChanged: (value) => Constants.weight = value,
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -152,21 +165,24 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
                   border: Border.all(
                     color: Colors.white70,
                     style: BorderStyle.solid,
-                    width: 0.6,
+                    width: 0.5,
                   ),
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 // color: Colors.black,
                 height: 50,
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width,
                 child: RaisedButton(
                   textColor: Colors.white70,
                   color: Colors.black87,
                   child: Text("Next"),
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=>AgeDetail()
+                        builder: (context) => AgeDetail()
                     ));
                   },
                   shape: new RoundedRectangleBorder(
@@ -183,3 +199,4 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
 
 }
 
+//

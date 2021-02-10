@@ -68,7 +68,16 @@ class WeightDetailWidgetState extends State<WeightDetailWidget> {
 
       child: Column(
         children: [
-          personalDetailText(weighttext),
+          Container(
+            margin: new EdgeInsets.only(top: 80,bottom: 38),
+            child: Text(
+              weighttext,
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+          ),
           Container(
             width: MediaQuery.of(context).size.width/4,
             child: Padding(

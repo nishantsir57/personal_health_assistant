@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/ListOfDoctors.dart';
-import 'package:personal_health_assistant/activities/HomeActivities/searchBar.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
 
@@ -19,8 +18,8 @@ class HomeWidget extends StatefulWidget{
 }
 
 class HomeWidgetState extends State<HomeWidget> {
-  static String healthPlans = 'Update Exercise Plans';
-  static String dietPlans = 'Update Diet Plans';
+  static String healthPlans = 'Update Exercise\nPlans';
+  static String dietPlans = 'Update Diet\nPlans';
   static String consultWithDoctor = "Consult With\nDoctor";
 
   @override
@@ -49,13 +48,7 @@ class HomeWidgetState extends State<HomeWidget> {
             ),
           ),
           actions: [
-            IconButton(
-              color: Colors.white,
-              icon: Icon(Icons.search_outlined),
-              onPressed: () async {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SearchBarDemoApp()));
-              },
-            ),
+
             MaterialButton(
               color: Colors.black,
               child: Icon(Icons.help_center_sharp,color: Colors.white,),
@@ -90,7 +83,6 @@ class HomeWidgetState extends State<HomeWidget> {
     Widget okButton = FlatButton(
       child: Row(
         children: [
-          // Text(""),
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: Icon(Icons.thumb_up,color: Colors.blue,),
@@ -172,7 +164,7 @@ class HomeWidgetState extends State<HomeWidget> {
               child: Row(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(60.0),
+                    padding: const EdgeInsets.all(40.0),
                     child: Container(
                       child: Image.network(pathofImage,
                         fit: BoxFit.fitWidth,

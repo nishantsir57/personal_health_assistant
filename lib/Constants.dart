@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Constants
 {
   static String _email;
@@ -15,6 +17,10 @@ class Constants
   static List<String> _d2;
   static List<String> _d;
   static int _slotSelected;
+  static var _image;
+
+  static get image => _image;
+  static set image(value) => _image=value;
 
   static int get slotSelected => _slotSelected;
 

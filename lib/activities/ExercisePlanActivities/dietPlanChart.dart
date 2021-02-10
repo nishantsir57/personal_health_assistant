@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/ListOfDoctors.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/exercisePlanChart.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
-import 'package:personal_health_assistant/activities/HomeActivities/searchBar.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
 
@@ -136,16 +135,7 @@ class DietPlanChartState extends State<DietPlanChartWidget> {
                             builder: (context) => ExercisePlanChart()));
                   },
                 ),
-                IconButton(
-                  color: Colors.white,
-                  icon: Icon(Icons.search_outlined),
-                  onPressed: () async {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SearchBarDemoApp()));
-                  },
-                ),
+
               ],
             ),
             body: TabBarView(
