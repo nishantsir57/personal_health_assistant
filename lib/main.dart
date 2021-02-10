@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
+import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
 void main()async {
   // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Home() ;
+    return LoginPage() ;
   }
 }

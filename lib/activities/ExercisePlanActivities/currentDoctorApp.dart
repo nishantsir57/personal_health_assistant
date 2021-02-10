@@ -1,14 +1,15 @@
+import 'dart:collection';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:personal_health_assistant/activities/ConsultDoctorActivities/ListOfDoctors.dart';
-import 'package:personal_health_assistant/activities/ExercisePlanActivities/dietPlanChart.dart';
+import 'package:personal_health_assistant/Constants.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
-import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
-import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
 
 class CurrentAppointment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print('Current Apointment');
     return CurrentAppointmentWidget();
   }
 }
@@ -21,6 +22,15 @@ class CurrentAppointmentWidget extends StatefulWidget {
 class CurrentAppointmentState extends State<CurrentAppointmentWidget> {
   @override
   Widget build(BuildContext context) {
+    print('current Appointment state');
+    List<QueryDocumentSnapshot> appointments=Constants.appointments;
+    int len=0;
+    if(appointments != null)
+      {
+        print('Length is $len');
+        len=appointments.length;
+      }
+    print(len);
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
@@ -45,21 +55,27 @@ class CurrentAppointmentState extends State<CurrentAppointmentWidget> {
               ),
             ),
           ),
-          body: ListView(
-            children: [
-              activeAppointmentInfo(),
-              activeAppointmentInfo(),
-              activeAppointmentInfo(),
-              activeAppointmentInfo(),
-              activeAppointmentInfo(),
-              activeAppointmentInfo(),
-              activeAppointmentInfo(),
-            ],
-          )),
+          body: ListView.builder(
+            itemCount: len,
+              itemBuilder: (context, index) => activeAppointmentInfo(appointments[index]),
+          )
+
+          //   (
+          //   children: [
+          //     activeAppointmentInfo(),
+          //     activeAppointmentInfo(),
+          //     activeAppointmentInfo(),
+          //     activeAppointmentInfo(),
+          //     activeAppointmentInfo(),
+          //     activeAppointmentInfo(),
+          //     activeAppointmentInfo(),
+          //   ],
+          // )
+      ),
     );
   }
 
-  Widget activeAppointmentInfo(){
+  Widget activeAppointmentInfo(QueryDocumentSnapshot doc){
     return Container(
       color: Colors.white,
       child: Column(
@@ -68,7 +84,7 @@ class CurrentAppointmentState extends State<CurrentAppointmentWidget> {
             tileColor: Colors.red[100],
             title: Center(
               child: Text(
-                "Appointment id: #879",
+                "Appointment id: #"+doc['id'],
                 style: TextStyle(
                   color: Colors.black,
                   fontStyle: FontStyle.italic,
@@ -82,7 +98,7 @@ class CurrentAppointmentState extends State<CurrentAppointmentWidget> {
             tileColor: Colors.red[50],
             title: Center(
               child: Text(
-                "Doctor Name: Shivang Gangwar",
+                "Doctor Name: ${doc['name']}",
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -92,15 +108,15 @@ class CurrentAppointmentState extends State<CurrentAppointmentWidget> {
             ),
             subtitle: Column(
               children: [
+                // Text(
+                //   "Apppointment Date: 01/03/2021",
+                //   style: TextStyle(
+                //     color: Colors.black,
+                //     fontWeight: FontWeight.normal,
+                //   ),
+                // ),
                 Text(
-                  "Apppointment Date: 01/03/2021",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                Text(
-                  "Apppointment Time: 12:00 PM",
+                  "Apppointment Time: ${doc['time']}",
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.normal,

@@ -6,6 +6,7 @@ import 'package:personal_health_assistant/activities/ProfileActivities/LogoutBut
 import 'package:personal_health_assistant/Constants.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/dietPlanChart.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/exercisePlanChart.dart';
+import 'package:personal_health_assistant/development/FetchAppointments.dart';
 import 'package:personal_health_assistant/development/generatePlans.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -89,12 +90,15 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
           child: InkWell(
             splashColor: Colors.red,
             onTap: () async{
+
               if(textplan==activePlanText){
                 await GeneratePlans().generatePlans();
                 Navigator.push(context,
                     MaterialPageRoute(
                         builder: (context) => DietPlanChart()));
               }else if(textplan==doctorAppointText){
+                await FetchAppointments().fetchAppointments();
+                print('Appointments fetched ${Constants.appointments}');
                 Navigator.push(context,
                     MaterialPageRoute(
                         builder: (context) => CurrentAppointment()));

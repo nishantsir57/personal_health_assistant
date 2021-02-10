@@ -1,3 +1,6 @@
+import 'dart:collection';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Constants
@@ -18,6 +21,14 @@ class Constants
   static List<String> _d;
   static int _slotSelected;
   static var _image;
+  static List<QueryDocumentSnapshot> _appointments;
+
+
+  static List<QueryDocumentSnapshot> get appointments => _appointments;
+
+  static set appointments(List<QueryDocumentSnapshot> value) {
+    _appointments = value;
+  }
 
   static get image => _image;
   static set image(value) => _image=value;

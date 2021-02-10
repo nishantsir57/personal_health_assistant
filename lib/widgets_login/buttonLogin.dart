@@ -4,6 +4,7 @@ import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassw
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
 import 'package:personal_health_assistant/development/DoctorsDetails.dart';
+import 'package:personal_health_assistant/development/FetchAppointments.dart';
 import 'package:personal_health_assistant/development/FillData.dart';
 import 'package:personal_health_assistant/development/login.dart';
 
@@ -46,6 +47,7 @@ class LoginButtonState extends State<LoginButton>{
                 await DoctorsDetails().doctorsDetails();
                 if(status == 'success') {
                   await FillData().fillData();
+                  await FetchAppointments().fetchAppointments();
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Home())
