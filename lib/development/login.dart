@@ -16,6 +16,10 @@ class Login
         return 'Wrong Password';
       }
     }
+    catch(e1)
+    {
+      return e1;
+    }
     return 'success';
   }
 }

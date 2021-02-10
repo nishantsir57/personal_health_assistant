@@ -8,6 +8,9 @@ class Profile
     await FirebaseFirestore.instance.collection('users').doc(Constants.email)
         .set(
       {
+        'name' : Constants.name,
+        'email' : Constants.email,
+        'phone' : Constants.phone,
         'weight' : Constants.weight,
         'height_feet' : Constants.heightFeet,
         'height_inches' : Constants.heightInches,

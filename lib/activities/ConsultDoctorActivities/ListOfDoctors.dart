@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/SlotAvailabilityPage.dart';
 
+import '../../Constants.dart';
+
 class DoctorList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,9 +45,8 @@ class DoctorListState extends State<DoctorListWidget> {
           color: Colors.white12,
           child: ListView(
             children: [
-              doctorDetailCard(doctor_Name, doctor_experiance, doctor_ImageURL,area_of_expertise),
-              doctorDetailCard(doctor_Name, doctor_experiance, doctor_ImageURL,area_of_expertise),
-              doctorDetailCard(doctor_Name, doctor_experiance, doctor_ImageURL,area_of_expertise),
+              doctorDetailCard(Constants.d1[0], Constants.d1[2], doctor_ImageURL,Constants.d1[1], Constants.d1),
+              doctorDetailCard(Constants.d2[0], Constants.d2[2], doctor_ImageURL,Constants.d2[1], Constants.d2),
             ],
           ),
         ),
@@ -53,7 +54,7 @@ class DoctorListState extends State<DoctorListWidget> {
     );
   }
 
-  Widget doctorDetailCard(String doc_name,String doc_experiance,String doc_ImageURL, String Area_of_expertise){
+  Widget doctorDetailCard(String doc_name,String doc_experiance,String doc_ImageURL, String Area_of_expertise, List<String> de){
     return Container(
       // color: Colors.white,
       height: MediaQuery.of(context).size.height/3.2,
@@ -69,7 +70,12 @@ class DoctorListState extends State<DoctorListWidget> {
         elevation: 3,
         child: InkWell(
           splashColor: Colors.greenAccent,
-          onTap: () {},
+          onTap: () {
+            Constants.d=de;
+            Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context) => SlotPage()));
+          },
           child: Column(
             children: [
               Row(

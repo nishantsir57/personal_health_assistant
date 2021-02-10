@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/AppointmentConfirmed.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/SlotList.dart';
+import 'package:personal_health_assistant/development/SlotConfirmation.dart';
 import 'package:toast/toast.dart';
+
+import '../../Constants.dart';
 class SlotPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -111,8 +114,10 @@ class SlotPageWidgetState extends State<SlotPageWidget> {
               borderRadius: BorderRadius.circular(10.0),
             ),
             child: FlatButton(
-              onPressed: () {
+              onPressed: () async{
                 if (SlotListState.selectedUser != null) {
+                  Constants.slotSelected=SlotListState.selectedUser.userId;
+                  await SlotConfirmation().slotConfirmation();
                   // slotBooked=SlotListState.selectedUser.toString();
                   Navigator.push(
                       context,

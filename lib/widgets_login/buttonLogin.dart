@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
-import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
+import 'package:personal_health_assistant/development/DoctorsDetails.dart';
 import 'package:personal_health_assistant/development/FillData.dart';
 import 'package:personal_health_assistant/development/login.dart';
 
@@ -43,6 +43,7 @@ class LoginButtonState extends State<LoginButton>{
             child: FlatButton(
               onPressed: () async{
                 String status=await Login().login();
+                await DoctorsDetails().doctorsDetails();
                 if(status == 'success') {
                   await FillData().fillData();
                   Navigator.push(

@@ -11,6 +11,28 @@ class Constants
   static String _age;
   static String _targetWeight;
   static Map<String, List<String>> _diet;
+  static List<String> _d1;
+  static List<String> _d2;
+  static List<String> _d;
+  static int _slotSelected;
+
+  static int get slotSelected => _slotSelected;
+
+  static set slotSelected(int value) {
+    _slotSelected = value;
+  }
+
+  static List<String> get d => _d;
+
+  static set d(List<String> value) {
+    _d = value;
+  }
+
+  static List<String> get d1 => _d1;
+
+  static set d1(List<String> value) {
+    _d1 = value;
+  }
 
   static Map<String, List<String>> get diet => _diet;
   static Map<String, String> _exercise;
@@ -147,5 +169,11 @@ class Constants
 
   static set exercise(Map<String, String> value) {
     _exercise = value;
+  }
+
+  static List<String> get d2 => _d2;
+
+  static set d2(List<String> value) {
+    _d2 = value;
   }
 }

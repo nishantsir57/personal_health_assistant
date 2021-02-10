@@ -85,12 +85,12 @@ class User {
 
   static List<User> getUsers() {
     return <User>[
-      User(userId: 1, firstName: SlotPageWidgetState.t1),
-      User(userId: 2, firstName: SlotPageWidgetState.t2),
-      User(userId: 3, firstName: SlotPageWidgetState.t3),
-      User(userId: 4, firstName: SlotPageWidgetState.t4),
-      User(userId: 5, firstName: SlotPageWidgetState.t5),
-      User(userId: 5, firstName: SlotPageWidgetState.t6),
+      User(userId: 3, firstName: SlotPageWidgetState.t1),
+      User(userId: 4, firstName: SlotPageWidgetState.t2),
+      User(userId: 5, firstName: SlotPageWidgetState.t3),
+      User(userId: 6, firstName: SlotPageWidgetState.t4),
+      User(userId: 7, firstName: SlotPageWidgetState.t5),
+      User(userId: 8, firstName: SlotPageWidgetState.t6),
     ];
   }
 }
