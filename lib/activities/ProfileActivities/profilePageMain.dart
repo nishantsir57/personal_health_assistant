@@ -6,6 +6,7 @@ import 'package:personal_health_assistant/activities/ProfileActivities/LogoutBut
 import 'package:personal_health_assistant/Constants.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/dietPlanChart.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/exercisePlanChart.dart';
+import 'package:personal_health_assistant/development/generatePlans.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -49,13 +50,13 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
               Expanded(
                 child: ListView(children: <Widget>[
                   // profilePicture(profilePicutrePath),
-                  dataOfPerson("Name: from newName widget"),
-                  dataOfPerson("Email: from NewEmail widget"),
-                  dataOfPerson("Phone: from inputPhone Widget"),
-                  dataOfPerson("Constants.age"),
-                  dataOfPerson("Constants.weight"),
-                  dataOfPerson("Constants.targetWeight"),
-                  dataOfPerson("{Constants.heightFeet} feets {Constants.heightInches} inches"),
+                  dataOfPerson("Name : ${Constants.name}"),
+                  dataOfPerson("Email : ${Constants.email}"),
+                  dataOfPerson("Phone: ${Constants.phone}"),
+                  dataOfPerson("Age : ${Constants.age}"),
+                  dataOfPerson("Weight : ${Constants.weight}"),
+                  dataOfPerson("Target Weight : ${Constants.targetWeight}"),
+                  dataOfPerson("Height : ${Constants.heightFeet} feets ${Constants.heightInches} inches"),
                   plansButton(activePlanText),
                   plansButton(doctorAppointText),
                 ]),
@@ -87,8 +88,9 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
           color: Colors.black,
           child: InkWell(
             splashColor: Colors.red,
-            onTap: () {
+            onTap: () async{
               if(textplan==activePlanText){
+                await GeneratePlans().generatePlans();
                 Navigator.push(context,
                     MaterialPageRoute(
                         builder: (context) => DietPlanChart()));

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/loginpage.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/development/signup.dart';
 
 
@@ -45,7 +46,7 @@ class ButtonNewUserState extends State<ButtonNewUser> {
                  await Signup().createUser();
                  Navigator.push(
                      context,
-                     MaterialPageRoute(builder: (context) => Home())
+                     MaterialPageRoute(builder: (context) => WeightDetail())
                  );
                }
                else

@@ -19,8 +19,8 @@ class HomeWidget extends StatefulWidget{
 }
 
 class HomeWidgetState extends State<HomeWidget> {
-  static String healthPlans = 'Health Plans';
-  static String dietPlans = 'Diet Plans';
+  static String healthPlans = 'Update Exercise Plans';
+  static String dietPlans = 'Update Diet Plans';
   static String consultWithDoctor = "Consult With\nDoctor";
 
   @override

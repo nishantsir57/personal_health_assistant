@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/ListOfDoctors.dart';
@@ -16,9 +17,12 @@ import 'package:personal_health_assistant/activities/ProfileActivities/ActivePla
 import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/dietPlanChart.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/exercisePlanChart.dart';
+import 'package:personal_health_assistant/development/login.dart';
 
-void main() {
+void main()async {
   // SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -41,6 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Home() ;
+    return LoginPage() ;
   }
 }

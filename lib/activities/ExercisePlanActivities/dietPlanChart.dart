@@ -7,6 +7,8 @@ import 'package:personal_health_assistant/activities/HomeActivities/searchBar.da
 import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
 
+import '../../Constants.dart';
+
 class DietPlanChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -148,21 +150,20 @@ class DietPlanChartState extends State<DietPlanChartWidget> {
             ),
             body: TabBarView(
               children: [
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-
+                dailyExercise(Constants.diet['monday'][0], Constants.diet['monday'][1], Constants.diet['monday'][2]),
+                dailyExercise(Constants.diet['tuesday'][0], Constants.diet['tuesday'][1], Constants.diet['tuesday'][2]),
+                dailyExercise(Constants.diet['wednesday'][0], Constants.diet['wednesday'][1], Constants.diet['wednesday'][2]),
+                dailyExercise(Constants.diet['thursday'][0], Constants.diet['thursday'][1], Constants.diet['thursday'][2]),
+                dailyExercise(Constants.diet['friday'][0], Constants.diet['friday'][1], Constants.diet['friday'][2]),
+                dailyExercise(Constants.diet['saturday'][0], Constants.diet['saturday'][1], Constants.diet['saturday'][2]),
+                dailyExercise(Constants.diet['sunday'][0], Constants.diet['sunday'][1], Constants.diet['sunday'][2]),
               ],
             )),
       ),
     );
   }
 
-  Widget dailyExercise() {
+  Widget dailyExercise(String breakfast, String lunch, String dinner) {
     return Container(
         alignment: Alignment.topLeft,
         color: Colors.white,
@@ -184,7 +185,7 @@ class DietPlanChartState extends State<DietPlanChartWidget> {
               child: ListTile(
                 tileColor: Colors.deepOrange[50],
                 title: Text(
-                  "1. Single Leg Glute Bridge\n2. Cat-Camel Stretch\n3. Jumping Jacks\n4. Inchworm Stretch",
+                  breakfast,
                   style: TextStyle(
                       letterSpacing: 2,
                       color: Colors.black54,
@@ -209,7 +210,7 @@ class DietPlanChartState extends State<DietPlanChartWidget> {
               child: ListTile(
                 tileColor: Colors.purple[50],
                 title: Text(
-                  "1. Single Leg Glute Bridge\n2. Cat-Camel Stretch\n3. Jumping Jacks\n4. Inchworm Stretch\n",
+                  lunch,
                   style: TextStyle(
                       letterSpacing: 2,
                       color: Colors.black54,
@@ -234,7 +235,7 @@ class DietPlanChartState extends State<DietPlanChartWidget> {
               child: ListTile(
                 tileColor: Colors.green[50],
                 title: Text(
-                  "1. Single Leg Glute Bridge\n2. Cat-Camel Stretch\n3. Jumping Jacks\n4. Inchworm Stretch",
+                  dinner,
                   style: TextStyle(
                       letterSpacing: 2,
                       color: Colors.black54,

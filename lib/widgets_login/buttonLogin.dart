@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/ForgetPassword.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
 import 'package:personal_health_assistant/activities/LoginActivities/newuser_page.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
+import 'package:personal_health_assistant/development/FillData.dart';
 import 'package:personal_health_assistant/development/login.dart';
 
 class LoginButtonWidget extends StatelessWidget {
@@ -42,6 +44,7 @@ class LoginButtonState extends State<LoginButton>{
               onPressed: () async{
                 String status=await Login().login();
                 if(status == 'success') {
+                  await FillData().fillData();
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Home())

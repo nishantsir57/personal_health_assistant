@@ -7,6 +7,8 @@ import 'package:personal_health_assistant/activities/HomeActivities/searchBar.da
 import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
 
+import '../../Constants.dart';
+
 class ExercisePlanChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -148,21 +150,20 @@ class ExercisePlanChartState extends State<ExercisePlanChartWidget> {
             ),
             body: TabBarView(
               children: [
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-                dailyExercise(),
-
+                dailyExercise(Constants.exercise['monday']),
+                dailyExercise(Constants.exercise['tuesday']),
+                dailyExercise(Constants.exercise['wednesday']),
+                dailyExercise(Constants.exercise['thursday']),
+                dailyExercise(Constants.exercise['friday']),
+                dailyExercise(Constants.exercise['saturday']),
+                dailyExercise(Constants.exercise['sunday']),
               ],
             )),
       ),
     );
   }
 
-  Widget dailyExercise() {
+  Widget dailyExercise(String exercise) {
     return Container(
         alignment: Alignment.topLeft,
         color: Colors.white,
@@ -184,40 +185,14 @@ class ExercisePlanChartState extends State<ExercisePlanChartWidget> {
               child: ListTile(
                 tileColor: Colors.deepOrange[50],
                 title: Text(
-                  "1. Single Leg Glute Bridge\n2. Cat-Camel Stretch\n3. Jumping Jacks\n4. Inchworm Stretch",
+                  exercise,
                   style: TextStyle(
                       letterSpacing: 2,
                       color: Colors.black54,
                       fontWeight: FontWeight.normal),
                 ),
               ),
-            ),
-            Divider(),
-            Flexible(
-              child: ListTile(
-                tileColor: Colors.purple[100],
-                title: Text(
-                  "Evening",
-                  style: TextStyle(
-                      letterSpacing: 2,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            Flexible(
-              child: ListTile(
-                tileColor: Colors.purple[50],
-                title: Text(
-                  "1. Single Leg Glute Bridge\n2. Cat-Camel Stretch\n3. Jumping Jacks\n4. Inchworm Stretch",
-                  style: TextStyle(
-                      letterSpacing: 2,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.normal),
-                ),
-              ),
-            ),
-            // more widgets
+            ), // more widgets
           ],
         ));
   }
