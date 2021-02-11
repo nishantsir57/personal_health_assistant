@@ -3,13 +3,14 @@ import 'package:personal_health_assistant/Constants.dart';
 
 class DoctorsDetails {
   Future<void> doctorsDetails() async {
-    List<String> l=new List(9);
-    List<String> l1=new List(9);
+
+
     await FirebaseFirestore.instance
         .collection('doctor')
         .doc('doctor1')
         .get()
         .then((doc) {
+      List<String> l=new List(9);
       l[0]=doc['name'].toString();
       l[1]=doc['area'].toString();
       l[2]=doc['exp'].toString();
@@ -26,6 +27,7 @@ class DoctorsDetails {
         .doc('doctor2')
         .get()
         .then((doc) {
+      List<String> l1=new List(9);
       l1[0]=doc['name'].toString();
       l1[1]=doc['area'].toString();
       l1[2]=doc['exp'].toString();

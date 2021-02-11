@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/ExercisePlanActivities/currentDoctorApp.dart';
+import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/ActivePlans.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/LogoutButton.dart';
 import 'package:personal_health_assistant/Constants.dart';
@@ -24,7 +25,7 @@ class ProfilePageWidget extends StatefulWidget {
 class ProfilePageWidgetState extends State<ProfilePageWidget> {
   static String profilePicutrePath =
       "https://webmeup.com/upload/blog/lead-image-105.png";
-  static String activePlanText="Check Active Plans";
+  static String activePlanText="Update Profile";
   static String doctorAppointText="Check Active Appointments";
 
 
@@ -95,7 +96,7 @@ class ProfilePageWidgetState extends State<ProfilePageWidget> {
                 await GeneratePlans().generatePlans();
                 Navigator.push(context,
                     MaterialPageRoute(
-                        builder: (context) => DietPlanChart()));
+                        builder: (context) => WeightDetail()));
               }else if(textplan==doctorAppointText){
                 await FetchAppointments().fetchAppointments();
                 print('Appointments fetched ${Constants.appointments}');

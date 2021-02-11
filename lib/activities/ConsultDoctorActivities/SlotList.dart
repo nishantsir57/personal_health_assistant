@@ -14,7 +14,7 @@ class SlotListState extends State<SlotList> {
   static int selectedRadio;
   static int selectedRadioTile;
   @override
-  void initState() {
+  void initState(){
     super.initState();
     selectedRadio = 0;
     selectedRadioTile = 0;
@@ -85,22 +85,22 @@ class User {
   User({this.userId, this.firstName});
 
   static List<User> getUsers() {
-    List<String> s=Constants.d;
+    List<String> s= Constants.d;
     // List<User> l=new List(6);
     print(s[3]);
 
     return <User>[
-      if(s[3] == 'available')
+      if(s[3] == 'true')
       User(userId: 3, firstName: SlotPageWidgetState.t1),
-      if(s[4] == 'available')
+      if(s[4] == 'true')
       User(userId: 4, firstName: SlotPageWidgetState.t2),
-      if(s[5] == 'available')
+      if(s[5] == 'true')
       User(userId: 5, firstName: SlotPageWidgetState.t3),
-      if(s[6] == 'available')
+      if(s[6] == 'true')
       User(userId: 6, firstName: SlotPageWidgetState.t4),
-      if(s[7] == 'available')
+      if(s[7] == 'true')
       User(userId: 7, firstName: SlotPageWidgetState.t5),
-      if(s[8] == 'available')
+      if(s[8] == 'true')
       User(userId: 8, firstName: SlotPageWidgetState.t6),
     ];
   }

@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/ListOfDoctors.dart';
+import 'package:personal_health_assistant/activities/ExercisePlanActivities/dietPlanChart.dart';
+import 'package:personal_health_assistant/activities/ExercisePlanActivities/exercisePlanChart.dart';
 import 'package:personal_health_assistant/activities/PersonalDetails/WeightDetail.dart';
 import 'package:personal_health_assistant/activities/ProfileActivities/profilePageMain.dart';
+import 'package:personal_health_assistant/development/DoctorsDetails.dart';
+import 'package:personal_health_assistant/development/FetchAppointments.dart';
+import 'package:personal_health_assistant/development/generatePlans.dart';
 
 
 class Home extends StatelessWidget{
@@ -18,8 +23,8 @@ class HomeWidget extends StatefulWidget{
 }
 
 class HomeWidgetState extends State<HomeWidget> {
-  static String healthPlans = 'Update Exercise\nPlans';
-  static String dietPlans = 'Update Diet\nPlans';
+  static String healthPlans = 'Exercise\nPlans';
+  static String dietPlans = 'Diet\nPlans';
   static String consultWithDoctor = "Consult With\nDoctor";
 
   @override
@@ -144,17 +149,21 @@ class HomeWidgetState extends State<HomeWidget> {
           elevation: 3,
           child: InkWell(
             splashColor: Colors.greenAccent,
-            onTap: () {
+            onTap: () async{
               if (value == healthPlans) {
+                await GeneratePlans().generatePlans();
                 Navigator.push(context,
                     MaterialPageRoute(
-                        builder: (context) => WeightDetail()));
+                        builder: (context) => ExercisePlanChart()));
               } else if (value == dietPlans) {
+                await GeneratePlans().generatePlans();
                 Navigator.push(context,
                     MaterialPageRoute(
-                        builder: (context) => WeightDetail()));
+                        builder: (context) => DietPlanChart()));
               }
               else if (value == consultWithDoctor) {
+                await DoctorsDetails().doctorsDetails();
+                await FetchAppointments().fetchAppointments();
                 Navigator.push(context,
                     MaterialPageRoute(
                         builder: (context) => DoctorList()));

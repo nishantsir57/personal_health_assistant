@@ -101,7 +101,7 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
                       .size
                       .width,
                   child: TextField(
-                    onChanged: (value) => Constants.weight = value,
+                    onChanged: (value) => Constants.heightFeet = value,
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -135,7 +135,7 @@ class HeightDetailWidgetState extends State<HeightDetailWidget> {
                       .size
                       .width,
                   child: TextField(
-                    onChanged: (value) => Constants.weight = value,
+                    onChanged: (value) => Constants.heightInches = value,
                     style: TextStyle(
                       color: Colors.white,
                     ),

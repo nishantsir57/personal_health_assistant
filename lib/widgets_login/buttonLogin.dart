@@ -178,5 +178,4 @@ class LoginButtonState extends State<LoginButton>{
       ),
     );
   }
-  
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/AppointmentConfirmed.dart';
 import 'package:personal_health_assistant/activities/ConsultDoctorActivities/SlotList.dart';
+import 'package:personal_health_assistant/development/FetchAppointments.dart';
 import 'package:personal_health_assistant/development/SlotConfirmation.dart';
 import 'package:toast/toast.dart';
 
@@ -118,6 +119,7 @@ class SlotPageWidgetState extends State<SlotPageWidget> {
                 if (SlotListState.selectedUser != null) {
                   Constants.slotSelected=SlotListState.selectedUser.userId;
                   await SlotConfirmation().slotConfirmation();
+                  await FetchAppointments().fetchAppointments();
                   // slotBooked=SlotListState.selectedUser.toString();
                   Navigator.push(
                       context,

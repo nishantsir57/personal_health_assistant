@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_health_assistant/activities/HomeActivities/home.dart';
+import 'package:personal_health_assistant/development/FetchAppointments.dart';
 
 import '../../Constants.dart';
 
@@ -74,7 +75,8 @@ class AppointmentConfirmPageWidgetState
               borderRadius: BorderRadius.circular(10.0),
             ),
             child: FlatButton(
-              onPressed: () {
+              onPressed: () async{
+                await FetchAppointments().fetchAppointments();
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => Home()));
               },

@@ -7,13 +7,13 @@ class GeneratePlans
     int target=int.parse(Constants.targetWeight);
     if(target > weight)
       {
-        Constants.diet=Constants.weightGainDiet;
-        Constants.exercise=Constants.weightGainExercise;
+        Constants.diet= Constants.weightGainDiet;
+        Constants.exercise= Constants.weightGainExercise;
       }
     else
       {
         Constants.diet=Constants.weightLossDiet;
-        Constants.exercise=Constants.weightLossExercise;
+        Constants.exercise= Constants.weightLossExercise;
       }
     return;
   }
